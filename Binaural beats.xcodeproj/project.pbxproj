@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E551DC082FFCE7DE0072F4D2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E551DC072FFCE7DE0072F4D2 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E58838242FFC7CEA00DFF8AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E551DC072FFCE7DE0072F4D2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E58838142FFC7CE800DFF8AE /* Binaural beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Binaural beats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58838232FFC7CEA00DFF8AE /* Binaural beatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Binaural beatsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E588382D2FFC7CEA00DFF8AE /* Binaural beatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Binaural beatsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +77,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E551DBFF2FFCE0250072F4D2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		E588380B2FFC7CE800DFF8AE = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +91,8 @@
 				E58838262FFC7CEA00DFF8AE /* Binaural beatsTests */,
 				E58838302FFC7CEA00DFF8AE /* Binaural beatsUITests */,
 				E58838152FFC7CE800DFF8AE /* Products */,
+				E551DBFF2FFCE0250072F4D2 /* Settings */,
+				E551DC072FFCE7DE0072F4D2 /* Localizable.xcstrings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +206,14 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
+				de,
+				fr,
+				it,
+				ja,
+				es,
+				"pt-PT",
 			);
 			mainGroup = E588380B2FFC7CE800DFF8AE;
 			minimizedProjectReferenceProxies = 1;
@@ -212,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E551DC082FFCE7DE0072F4D2 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Binaural beats/Binaural beats.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HYUSCS3PJS;
@@ -398,6 +422,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Binaural-beats-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Flowave;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -413,7 +439,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "test.Binaural-beats";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomohiro.flowave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -434,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Binaural beats/Binaural beats.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HYUSCS3PJS;
@@ -442,6 +469,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Binaural-beats-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Flowave;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -457,7 +486,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "test.Binaural-beats";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomohiro.flowave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;

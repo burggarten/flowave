@@ -1,0 +1,5 @@
+Welcome to Flowave 1.0!
+• 30 binaural beat presets, 20 generative synth tracks, and 7 natural ambiences you can freely mix.
+• A built-in Pomodoro timer with focus history and daily charts.
+• iCloud sync across your devices — or keep everything local.
+• Available in 9 languages.

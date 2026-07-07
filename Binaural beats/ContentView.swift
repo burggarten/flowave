@@ -2,79 +2,34 @@
 //  ContentView.swift
 //  Binaural beats
 //
-//  Created by Tomohiro Hayashi on 2026/07/07.
+//  サウンド選択タブとポモドーロタブを持つルートビュー。
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
     var body: some View {
-        NavigationViewWrapper {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        TabView {
+            SoundsView()
+                .tabItem {
+                    Label("サウンド", systemImage: "waveform")
                 }
-                .onDelete(perform: deleteItems)
-            }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+
+            PomodoroView()
+                .tabItem {
+                    Label("ポモドーロ", systemImage: "timer")
                 }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-}
-
-fileprivate struct NavigationViewWrapper<Content: View>: View {
-    let content: () -> Content
-
-    var body: some View {
-#if os(macOS)
-        NavigationSplitView {
-            content()
-        } detail: {
-            Text("Select an item")
-        }
-#else
-        content()
-#endif
     }
 }
 
 #Preview {
+    let notifications = NotificationManager()
+    let cloud = CloudKeyValueStore(useICloud: false)
+    let history = PomodoroHistoryStore(cloud: cloud)
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .environment(AppSettings())
+        .environment(BinauralAudioEngine())
+        .environment(PomodoroTimer(notifications: notifications, history: history, cloud: cloud))
+        .environment(history)
 }

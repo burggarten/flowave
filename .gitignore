@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Xcode — user-specific state & build output
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+DerivedData/
+build/
+*.xcresult
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Fastlane runtime output (keep metadata/, ignore reports)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/screenshots.html
